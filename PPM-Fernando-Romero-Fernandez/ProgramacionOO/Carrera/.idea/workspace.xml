@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d173aa56-b3c8-428d-8cd4-afbd4c82ec59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="4b12f247-58da-4ef0-afe2-eb65530edb50" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,25 +11,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Users\juzn\Desktop\CicloSuperior\Programación\GitHub\PPM-Fernando-Romero-Fernandez\ProgramacionOO\Actividad11\.idea" />
-      </set>
-    </option>
-  </component>
-  <component name="ProjectId" id="1SpYqIkI2hadLLxn4ZfXeqM6nGf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1TAAIJvAIAcm47xAEWwsVmjgaIG" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Robot3Mauri" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juzn\Desktop\CicloSuperior\Programación\Carrera\files" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,16 +36,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MiMain">
     <configuration name="MiMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.politecnico.MiMain" />
-      <module name="Actividad11" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.politecnico.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="MAIN_CLASS_NAME" value="MiMain" />
+      <module name="Carrera" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RankingPilotos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RankingPilotos" />
+      <module name="Carrera" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -62,6 +54,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MiMain" />
+        <item itemvalue="Application.RankingPilotos" />
       </list>
     </recent_temporary>
   </component>
@@ -70,23 +63,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d173aa56-b3c8-428d-8cd4-afbd4c82ec59" name="Default Changelist" comment="" />
-      <created>1572262193175</created>
+      <changelist id="4b12f247-58da-4ef0-afe2-eb65530edb50" name="Default Changelist" comment="" />
+      <created>1572892444129</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572262193175</updated>
+      <updated>1572892444129</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
