@@ -4,7 +4,7 @@ public class SMejorPrecio implements SelectorDeMejorProducto{
 
 
     @Override
-    public Producto elegirMejorProducto(LoteDeProductos lote) {
+    public Producto elegirMejorProducto(LoteDeProductos lote) throws OutOfMaxProductsException {
         Producto productoMasBarato = null;
         double menorPrecio = Double.MAX_VALUE;
 

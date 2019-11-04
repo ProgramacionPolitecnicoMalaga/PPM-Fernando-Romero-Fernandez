@@ -3,7 +3,7 @@ package com.politecnico;
 public class SMejorRelacion implements SelectorDeMejorProducto{
 
     @Override
-    public Producto elegirMejorProducto(LoteDeProductos lote) {
+    public Producto elegirMejorProducto(LoteDeProductos lote) throws OutOfMaxProductsException {
         Producto productoMejorRelacion = null;
         double mejorRelacion = Double.MIN_VALUE;
 

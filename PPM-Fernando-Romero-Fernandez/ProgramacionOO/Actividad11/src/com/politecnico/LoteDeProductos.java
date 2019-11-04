@@ -1,10 +1,8 @@
 package com.politecnico;
 
-import java.util.concurrent.ExecutionException;
-
 public class LoteDeProductos {
     private Producto[] productos;
-    private final static int TAMANO = 100;
+    private final static int TAMANO = 3;
     private int totalProductos = 0;
     private SelectorDeMejorProducto selector;
 
@@ -12,12 +10,16 @@ public class LoteDeProductos {
         productos = new Producto[TAMANO];
     }
 
-    public void addProducto(Producto producto) throws Excepcion{
+    public void addProducto(Producto producto) throws NullProductException, OutOfMaxProductsException{
+        if(producto == null){
+            throw new NullProductException("No se permiten valores nulos");
+        }
+
         if(totalProductos < productos.length){
             productos[totalProductos] = producto;
             totalProductos++;
         } else{
-            throw new Excepcion("Has llegado al tamaño máximo");
+            throw new OutOfMaxProductsException("Has llegado al tamaño máximo");
         }
     }
 
@@ -25,11 +27,11 @@ public class LoteDeProductos {
         return totalProductos;
     }
 
-    public Producto getProductoEnPosicion(int i) throws Excepcion{
+    public Producto getProductoEnPosicion(int i) throws ProductPositionException{
         if((i < totalProductos) && (i>=0)){
             return productos[i];
         } else{
-            throw new Excepcion("No hay ningún elemento en esa posición");
+            throw new ProductPositionException("No hay ningún elemento en esa posición: ", i);
         }
     }
 
@@ -37,11 +39,11 @@ public class LoteDeProductos {
         this.selector = selector;
     }
 
-    public Producto getSellersChoice() throws Excepcion{
+    public Producto getSellersChoice() throws OutOfMaxProductsException {
         if(selector != null){
             return selector.elegirMejorProducto(this);
         } else{
-            throw new Excepcion("Ha habido un error al obtener la SellersChoice");
+            throw new OutOfMaxProductsException("Ha habido un error al obtener la SellersChoice");
         }
     }
 
