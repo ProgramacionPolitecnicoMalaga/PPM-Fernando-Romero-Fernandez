@@ -44,4 +44,12 @@ public class Piloto {
     public void setDescalificado(boolean descalificado) {
         this.descalificado = descalificado;
     }
+
+    @Override
+    public String toString() {
+        return "Piloto: " + nombre + "\n" +
+                "Posición: " + posicionDeSalida + "\n" +
+                "Escudería: " + escuderia + "\n" +
+                "===============================================" + "\n";
+    }
 }

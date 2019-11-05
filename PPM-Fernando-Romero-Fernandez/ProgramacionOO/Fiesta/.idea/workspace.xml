@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b12f247-58da-4ef0-afe2-eb65530edb50" name="Default Changelist" comment="" />
+    <list default="true" id="baafe147-84ee-4263-834d-4c2b4635d5a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +15,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1TAAIJvAIAcm47xAEWwsVmjgaIG" />
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Herencia" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\juzn\Desktop\CicloSuperior\Programación\Carrera\files" />
-    </key>
-  </component>
+  <component name="ProjectId" id="1TC93JafJ2qARIGV2QMFs67ROyR" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -36,17 +28,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MiMain">
+  <component name="RunManager">
     <configuration name="MiMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MiMain" />
-      <module name="Carrera" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RankingPilotos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RankingPilotos" />
-      <module name="Carrera" />
+      <module name="Fiesta" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,7 +39,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MiMain" />
-        <item itemvalue="Application.RankingPilotos" />
       </list>
     </recent_temporary>
   </component>
@@ -63,11 +47,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4b12f247-58da-4ef0-afe2-eb65530edb50" name="Default Changelist" comment="" />
-      <created>1572892444129</created>
+      <changelist id="baafe147-84ee-4263-834d-4c2b4635d5a9" name="Default Changelist" comment="" />
+      <created>1572953009958</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572892444129</updated>
+      <updated>1572953009958</updated>
     </task>
     <servers />
   </component>

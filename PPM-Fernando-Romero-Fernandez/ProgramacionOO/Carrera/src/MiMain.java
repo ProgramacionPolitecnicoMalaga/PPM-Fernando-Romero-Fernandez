@@ -5,16 +5,13 @@ public class MiMain {
     public static void main(String[] args) throws IOException {
         RankingPilotos ranking = new RankingPilotos();
 
+        ranking.ordenarPilotosPorPosicionDeSalida();
+        System.out.println("Ordenado por Posicion Salida \n" + ranking.pilotos);
 
         ranking.ordenarPilotosPorNombre();
-        for(int i= 0; i< ranking.pilotos.size(); i++){
-            System.out.println(ranking.pilotos.get(i).getNombre());
-        }
+        System.out.println("Ordenado por Nombre \n" + ranking.pilotos);
 
 
-        ranking.ordenarPilotosPorPosicionDeSalida();
-        for(int i= 0; i< ranking.pilotos.size(); i++){
-            System.out.println(ranking.pilotos.get(i).getNombre() + ranking.pilotos.get(i).getPosicionDeSalida());
-        }
+
     }
 }

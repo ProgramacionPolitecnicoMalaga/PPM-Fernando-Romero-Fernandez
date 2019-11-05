@@ -67,22 +67,11 @@ public class RankingPilotos {
 
     @Override
     public String toString() {
-        String cadena = "";
         Iterator<Piloto> pilotoActual = pilotos.iterator();
-        while(pilotoActual.hasNext()){
-            cadena = "Piloto: " + pilotoActual.next().getNombre() + "\n" +
-                    "Posición: " + pilotoActual.next().getPosicionDeSalida() + "\n" +
-                    "Escudería: " + pilotoActual.next().getEscuderia() + "\n" +
-                    "===============================================";
+        while (pilotoActual.hasNext()) {
+            return pilotoActual.toString();
         }
-
-        String pilotosString = "";
-
-        for (Piloto s : pilotos)
-        {
-            pilotosString += s + "\t";
-        }
-        System.out.println(pilotosString);
-        return cadena;
+        return null;
     }
+
 }
