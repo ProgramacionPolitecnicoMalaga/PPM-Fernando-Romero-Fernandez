@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ArchivoCSV {
@@ -13,6 +10,11 @@ public class ArchivoCSV {
     public ArchivoCSV(String ruta){
         this.ruta = ruta;
     }
+
+    public ArchivoCSV() {
+
+    }
+
 
     public ArrayList cargarCSV() throws IOException {
 
@@ -32,6 +34,38 @@ public class ArchivoCSV {
         }
 
         return listaPilotos;
+    }
+
+    public void escribirCSV(ArrayList<Piloto> listaPilotos){
+
+        try{
+
+            PrintWriter escritor = new PrintWriter(new File("files/newpilotos.csv"));
+            StringBuilder builder = new StringBuilder();
+
+            for(int i = 0; i < listaPilotos.size(); i++){
+
+                builder.append(listaPilotos.get(i).getPosicionDeSalida());
+                builder.append(";");
+                builder.append(listaPilotos.get(i).getNombre());
+                builder.append(";");
+                builder.append(listaPilotos.get(i).getEscuderia());
+                builder.append("\n");
+                System.out.println("Escribiendo...");
+
+
+            }
+            escritor.write(builder.toString());
+            escritor.close();
+
+            System.out.println("Archivo CSV creado!");
+
+        } catch(FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
     }
 
 }

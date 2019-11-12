@@ -26,7 +26,7 @@ public class RankingPilotos {
 
         } else if((numeroRandom > 0) && (numeroRandom <= 2)){ //SUMAR PUESTOS, ES DECIR RETRASAR POSICIÓN 1 O 2 PUESTOS
             int indexPiloto = pilotos.indexOf(piloto);
-            int cola = pilotos.size();
+            int cola = pilotos.size()-1;
 
             Piloto pilotoActual = new Piloto(piloto.getNombre(), piloto.getEscuderia(), piloto.getPosicionDeSalida());
             pilotos.remove(piloto);
@@ -48,14 +48,11 @@ public class RankingPilotos {
             else
                 pilotos.add(indexPiloto-numeroRandom, pilotoActual);
         }
+        eliminarPilotosDescalificados();
+
     }
 
     public void nosMoveran(){
-        /*Iterator <Piloto> pilotoActual = pilotos.iterator();
-        while(pilotoActual.hasNext()){
-            moverPiloto(pilotoActual.next());
-        } NO SÉ SOLUCIONAR EL ERROR QUE ME DA*/
-
         for(int i = 0; i < pilotos.size(); i++){
             moverPiloto(pilotos.get(i));
         }
@@ -87,7 +84,6 @@ public class RankingPilotos {
 
     @Override
     public String toString() {
-        eliminarPilotosDescalificados();
         return pilotos.toString();
     }
 

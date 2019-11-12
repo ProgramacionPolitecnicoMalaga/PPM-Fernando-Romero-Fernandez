@@ -17,7 +17,7 @@
   </component>
   <component name="ProjectId" id="1TU4WjyneESGJgBqVVDXxlRSVBA" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aeropuertos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Entregados/Productos" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -36,7 +36,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CarreraPilotos">
+    <configuration name="CarreraPilotos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CarreraPilotos" />
+      <module name="CarreraPilotos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestCarrera" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestCarrera" />
       <module name="CarreraPilotos" />
@@ -46,6 +53,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CarreraPilotos" />
         <item itemvalue="Application.TestCarrera" />
       </list>
     </recent_temporary>
@@ -62,5 +70,8 @@
       <updated>1573501373197</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
 </project>
