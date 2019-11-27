@@ -23,14 +23,11 @@ public class InterfazHospital {
     PriorityQueue<Urgencia> listaEspera = new PriorityQueue<Urgencia>(Urgencia.COMPARATOR_ESPECIALIDAD);
     ArrayList<String> listaEspecialidades;
 
-
-
     public InterfazHospital() throws IOException {
 
         ArchivoCSV arch1 = new ArchivoCSV();
         arch1.cargarCSV();
         listaEspecialidades = arch1.listaEspecialidadesArray;
-
         Iterator<String> it = listaEspecialidades.iterator();
         while(it.hasNext()){
             comboEspecialidades.addItem(it.next());
@@ -39,11 +36,15 @@ public class InterfazHospital {
         btnAñadirPaciente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Urgencia urgencia = new Urgencia(comboEspecialidades.getSelectedIndex(),txtDescripcion.getText(),urgenciaGraveCheckBox.isEnabled());
-                Paciente nuevoPaciente = new Paciente(txtNombre.getText(),Integer.parseInt(txtEdad.getText()) ,urgencia);
+                Paciente nuevoPaciente = new Paciente(txtNombre.getText(),Integer.parseInt(txtEdad.getText()));
+                Urgencia urg = new Urgencia(comboEspecialidades.getSelectedIndex(),txtDescripcion.getText(),urgenciaGraveCheckBox.isSelected(),nuevoPaciente);
 
-                String linea = nuevoPaciente.getNombre() + nuevoPaciente.getEdad() + listaEspecialidades.get(comboEspecialidades.getSelectedIndex());
-                txtAreaLista.setText(linea);
+                if(urgenciaGraveCheckBox.isSelected()){
+                    urg.setGrave(true);
+                }
+                listaEspera.add(urg);
+                actualizarJTextArea();
+
             }
         });
 
@@ -51,8 +52,48 @@ public class InterfazHospital {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+                if(!listaEspera.isEmpty()){
+                    Iterator<Urgencia> it = listaEspera.iterator();
+                    boolean algoGraveHaPasado = false;
+                    while(it.hasNext()){
+                        Urgencia urgActual = it.next();
+                        if(urgActual.isGrave()){
+                            int especialidad = urgActual.getEspecialidad();
+                            urgActual.setEspecialidad(0);
+                            String linea = urgActual.getPaciente().getNombre() + urgActual.getPaciente().getEdad()+ "Urgencia Grave"+listaEspecialidades.get(especialidad);
+                            txtSiguiente.setText(linea);
+                            listaEspera.remove(urgActual);
+                            actualizarJTextArea();
+                            algoGraveHaPasado = true;
+                        }
+                    }
+
+                    if(!algoGraveHaPasado){
+                        Urgencia urgActual2 = listaEspera.poll();
+                        int especialidad = urgActual2.getEspecialidad();
+                        String linea = urgActual2.getPaciente().getNombre() + urgActual2.getPaciente().getEdad()+ listaEspecialidades.get(especialidad);
+                        txtSiguiente.setText(linea);
+                        actualizarJTextArea();
+                    }
+                }
+
+
             }
         });
+
+
+    }
+
+    public void actualizarJTextArea(){
+        Iterator<Urgencia> it = listaEspera.iterator();
+        String linea = "";
+
+        while(it.hasNext()){
+            Urgencia urgActual =it.next();
+            int especialidad = urgActual.getEspecialidad();
+            linea += urgActual.getPaciente().getNombre() + urgActual.getPaciente().getEdad()+ listaEspecialidades.get(especialidad) + "\n";
+        }
+        txtAreaLista.setText(linea);
     }
 
     public static void main(String[] args) throws IOException {

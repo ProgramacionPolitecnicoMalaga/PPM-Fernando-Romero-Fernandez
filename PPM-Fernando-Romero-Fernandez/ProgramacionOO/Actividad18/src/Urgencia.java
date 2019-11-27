@@ -5,11 +5,13 @@ public class Urgencia {
     private String descripcion;
     private int especialidad;
     private boolean grave;
+    private Paciente paciente;
 
-    public Urgencia(int especialidad, String descripcion, boolean grave){
+    public Urgencia(int especialidad, String descripcion, boolean grave, Paciente paciente){
         this.especialidad = especialidad;
         this.descripcion = descripcion;
         this.grave = false;
+        this.paciente = paciente;
     }
 
     public static final Comparator<Urgencia> COMPARATOR_ESPECIALIDAD = new Comparator<Urgencia>() {
@@ -36,10 +38,18 @@ public class Urgencia {
     }
 
     public boolean isGrave() {
-        return grave;
+        if(grave){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void setGrave(boolean grave) {
         this.grave = grave;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
     }
 }

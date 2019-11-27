@@ -4,12 +4,10 @@ public class Paciente {
 
     private String nombre;
     private int edad;
-    private Urgencia urgencia;
 
-    public Paciente(String nombre, int edad, Urgencia urgencia){
+    public Paciente(String nombre, int edad){
         this.nombre = nombre;
         this.edad = edad;
-        this.urgencia = urgencia;
     }
 
     public String getNombre() {
