@@ -5,6 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.TreeMap;
 
 public class InterfazGrafica {
@@ -31,19 +34,20 @@ public class InterfazGrafica {
     public InterfazGrafica(){
 
         ListaEmpleadoTarea listaEmpleadoTarea = new ListaEmpleadoTarea();
+
         ArchivoXML miArchivoXML = new ArchivoXML("files/empleados.xml","empleado");
         NodeList listaNodosEmpleados = miArchivoXML.ObtenerListaDeNodos();
         for(int i = 0; i < listaNodosEmpleados.getLength();i++){
             Node miNodoActual = listaNodosEmpleados.item(i);
 
-            String dniEmpleado = miNodoActual.getAttributes().getNamedItem("DNI").toString();
-            String nombreEmpleado = miNodoActual.getAttributes().getNamedItem("nombre").toString();
-            String apellidosEmpleado = miNodoActual.getAttributes().getNamedItem("apellidos").toString();
-            //Aqui da un fallo, COMPROBAR Double productividadEmpleado = Double.parseDouble(miNodoActual.getAttributes().getNamedItem("productividad").toString());
-            //Aqui da el mismo fallo que el anterior, COMPROBAR int categoriaEmpleado = Integer.parseInt(miNodoActual.getAttributes().getNamedItem("categoria").toString());
-            Categoria miCategoria = new Categoria(1);
+            String dniEmpleado = miNodoActual.getAttributes().getNamedItem("DNI").getTextContent();
+            String nombreEmpleado = miNodoActual.getAttributes().getNamedItem("nombre").getTextContent();
+            String apellidosEmpleado = miNodoActual.getAttributes().getNamedItem("apellidos").getTextContent();
+            Double productividadEmpleado = Double.parseDouble(miNodoActual.getAttributes().getNamedItem("productividad").getTextContent());
+            int categoriaEmpleado = Integer.parseInt(miNodoActual.getAttributes().getNamedItem("categoria").getTextContent());
+            Categoria miCategoria = new Categoria(categoriaEmpleado);
 
-            Empleado miEmpleado2 = new Empleado(nombreEmpleado,apellidosEmpleado,dniEmpleado,2.5,miCategoria);
+            Empleado miEmpleado2 = new Empleado(nombreEmpleado,apellidosEmpleado,dniEmpleado,productividadEmpleado,miCategoria);
             comboEmpleados.addItem(miEmpleado2);
 
         }
@@ -53,13 +57,13 @@ public class InterfazGrafica {
         for(int i = 0; i < listaNodosEmpleados2.getLength();i++){
             Node miNodoActual = listaNodosEmpleados2.item(i);
 
-            String nombreProyecto = miNodoActual.getAttributes().getNamedItem("nombre").toString();
+            String nombreProyecto = miNodoActual.getAttributes().getNamedItem("nombre").getTextContent();
             String descripcionProyecto = miNodoActual.getTextContent();
-            String departamentoProyecto = miNodoActual.getAttributes().getNamedItem("departamento").toString();
-            //FALLO COMPROBAR Double fProduccionProyecto = Double.parseDouble(miNodoActual.getAttributes().getNamedItem("productividad").toString());
+            String departamentoProyecto = miNodoActual.getAttributes().getNamedItem("departamento").getTextContent();
+            Double fProduccionProyecto = Double.parseDouble(miNodoActual.getAttributes().getNamedItem("fprod").getTextContent());
 
 
-            Proyecto miProyecto2 = new Proyecto(nombreProyecto,descripcionProyecto,departamentoProyecto,2.5);
+            Proyecto miProyecto2 = new Proyecto(nombreProyecto,descripcionProyecto,departamentoProyecto,fProduccionProyecto);
             comboProyectos.addItem(miProyecto2);
 
         }
@@ -82,7 +86,11 @@ public class InterfazGrafica {
                 Proyecto proyecto = (Proyecto) comboProyectos.getSelectedItem();
 
                 Tarea tarea1 = new Tarea(nombreTarea,descripcion,horasEmpleadas,miEmpleado,proyecto);
-                listaEmpleadoTarea.mapaEmpleadoTarea.put(miEmpleado,tarea1);
+                LinkedList<Tarea> listaArray = tarea1.getEmpleado().getListaTareas();
+                listaArray.addLast(tarea1);
+
+
+                listaEmpleadoTarea.mapaEmpleadoTarea.put(miEmpleado, listaArray);
                 System.out.println("Tarea añadida al mapa!");
                 System.out.println(listaEmpleadoTarea.mapaEmpleadoTarea);
             }

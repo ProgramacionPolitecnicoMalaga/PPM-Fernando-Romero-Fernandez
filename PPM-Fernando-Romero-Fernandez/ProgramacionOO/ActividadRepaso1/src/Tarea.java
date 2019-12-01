@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import java.util.List;
 
 public class Tarea {
 
@@ -14,13 +15,6 @@ public class Tarea {
         this.proyecto = proyecto;
         this.empleado = empleado;
     }
-
-    public static final Comparator<Tarea> COMPARATOR_NOMBRE = new Comparator<Tarea>() {
-        @Override
-        public int compare(Tarea tarea, Tarea t1) {
-            return tarea.getNombreTarea().compareTo(t1.getNombreTarea());
-        }
-    };
 
     public String getNombreTarea() {
         return nombreTarea;

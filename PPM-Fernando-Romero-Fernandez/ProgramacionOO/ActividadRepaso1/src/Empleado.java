@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Empleado {
 
     private String nombre, apellidos, DNI;
     private double productividad;
     private Categoria categoria;
-    private Tarea tarea;
+    private LinkedList<Tarea> listaTareas = new LinkedList<>();
 
     public Empleado(String nombre, String apellidos, String DNI, double productividad, Categoria categoria){
         this.nombre = nombre;
@@ -11,7 +14,6 @@ public class Empleado {
         this.DNI = DNI;
         this.productividad = productividad;
         this.categoria = categoria;
-        this.tarea = tarea;
     }
 
     public String getNombre() {
@@ -57,5 +59,13 @@ public class Empleado {
     @Override
     public String toString() {
         return nombre;
+    }
+
+    public LinkedList<Tarea> getListaTareas() {
+        return listaTareas;
+    }
+
+    public void setListaTareas(LinkedList<Tarea> listaTareas) {
+        this.listaTareas = listaTareas;
     }
 }

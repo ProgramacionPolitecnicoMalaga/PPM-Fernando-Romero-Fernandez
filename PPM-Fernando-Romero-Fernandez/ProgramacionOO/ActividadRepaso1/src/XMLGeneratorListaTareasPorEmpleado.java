@@ -12,14 +12,14 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class XMLGeneratorListaTareasPorEmpleado {
 
     public XMLGeneratorListaTareasPorEmpleado(Empleado miEmpleado, ListaEmpleadoTarea listaEmpleadoTarea){
 
-            TreeMap<Empleado,Tarea> miMapa = listaEmpleadoTarea.mapaEmpleadoTarea;
+            TreeMap<Empleado, LinkedList<Tarea>> miMapa = listaEmpleadoTarea.mapaEmpleadoTarea;
+            LinkedList lista = new LinkedList();
             String DNI = "";
 
             try {
@@ -29,9 +29,9 @@ public class XMLGeneratorListaTareasPorEmpleado {
 
                 Element rootElement = doc.createElement("empleado");
                 doc.appendChild(rootElement);
-                for (Map.Entry<Empleado,Tarea> entry : miMapa.entrySet()) {
-                    //RECORRER MAPA PARA ESCRIBIR EN EL DOCUMENTO XML TODOS LOS NODOS
-                    if(entry.getKey() == miEmpleado){
+                for (Map.Entry<Empleado, LinkedList<Tarea>> entry : miMapa.entrySet()) {
+                    //CREAMOS EL NODO DEL EMPLEADO ACTUAL
+                    if (entry.getKey() == miEmpleado) {
                         Attr DNIAtributo = doc.createAttribute("DNI");
                         DNIAtributo.setValue(entry.getKey().getDNI());
                         DNI = entry.getKey().getDNI();
@@ -48,52 +48,50 @@ public class XMLGeneratorListaTareasPorEmpleado {
                         Attr CategoriaAtributo = doc.createAttribute("categoria");
                         CategoriaAtributo.setValue(entry.getKey().getCategoria().getCategoria());
                         rootElement.setAttributeNode(CategoriaAtributo);
-                    }
-                }
-                try {
 
-                    for (Map.Entry<Empleado,Tarea> entry : miMapa.entrySet()) {
-                        //RECORRER MAPA PARA ESCRIBIR EN EL DOCUMENTO XML TODOS LOS NODOS
-                        if(entry.getKey() == miEmpleado) {
+                        for (int i = 0; i < entry.getValue().size(); i++) {
+
                             Element proyecto = doc.createElement("proyecto");
                             rootElement.appendChild(proyecto);
 
-                            Attr nombreProyecto = doc.createAttribute("nombre");
-                            nombreProyecto.setValue(entry.getValue().getProyecto().getNombre());
+                            Attr nombreProyecto = doc.createAttribute("id");
+                            nombreProyecto.setValue(entry.getValue().get(i).getProyecto().getNombre());
                             proyecto.setAttributeNode(nombreProyecto);
 
                             Attr descripcionProyecto = doc.createAttribute("descripcion");
-                            descripcionProyecto.setValue(entry.getValue().getProyecto().getDescripcion());
+                            descripcionProyecto.setValue(entry.getValue().get(i).getProyecto().getDescripcion());
                             proyecto.setAttributeNode(descripcionProyecto);
 
                             Attr departamentoProyecto = doc.createAttribute("departamento");
-                            departamentoProyecto.setValue(entry.getValue().getProyecto().getDepartamento());
+                            departamentoProyecto.setValue(entry.getValue().get(i).getProyecto().getDepartamento());
                             proyecto.setAttributeNode(departamentoProyecto);
 
                             Attr productividadProyecto = doc.createAttribute("factorProductividad");
-                            productividadProyecto.setValue(String.valueOf(entry.getValue().getProyecto().getFactorProduccion()));
+                            productividadProyecto.setValue(String.valueOf(entry.getValue().get(i).getProyecto().getFactorProduccion()));
                             proyecto.setAttributeNode(productividadProyecto);
 
-                            for (Map.Entry<Empleado, Tarea> entry2 : miMapa.entrySet()) {
-                                System.out.println(entry2.getKey());
-                                if(entry2.getKey() == miEmpleado) {
-                                    System.out.println("hola");
-                                    Element tarea = doc.createElement("tarea");
-                                    proyecto.appendChild(tarea);
-
-                                    Attr NombreTareaAtributo = doc.createAttribute("nombre");
-                                    NombreTareaAtributo.setValue(entry2.getValue().getNombreTarea());
-                                    tarea.setAttributeNode(NombreTareaAtributo);
-
-                                    Attr HorasTareaAtributo = doc.createAttribute("horasEmpleadas");
-                                    HorasTareaAtributo.setValue(String.valueOf(entry2.getValue().getHorasEmpleadas()));
-                                    rootElement.setAttributeNode(HorasTareaAtributo);
-                                }
-                            }
 
                         }
 
+                        for (int j = 0; j < entry.getValue().size(); j++) {
+
+                            Element tarea = doc.createElement("tarea");
+                            doc.getElementsByTagName("proyecto").item(j).appendChild(tarea);
+
+                            Attr NombreTareaAtributo = doc.createAttribute("nombre");
+                            NombreTareaAtributo.setValue(entry.getValue().get(j).getNombreTarea());
+                            tarea.setAttributeNode(NombreTareaAtributo);
+
+                            Attr HorasTareaAtributo = doc.createAttribute("horasEmpleadas");
+                            HorasTareaAtributo.setValue(String.valueOf(entry.getValue().get(j).getHorasEmpleadas()));
+                            tarea.setAttributeNode(HorasTareaAtributo);
+
+                        }
                     }
+
+
+                }
+                try {
 
 
                         // escribimos el contenido en un archivo .xml
@@ -103,7 +101,7 @@ public class XMLGeneratorListaTareasPorEmpleado {
                         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
                         DOMSource source = new DOMSource(doc);
                         String ruta2 = "results/"+DNI+".xml";
-                        StreamResult result = new StreamResult(new File("results/miDNI.xml"));
+                        StreamResult result = new StreamResult(new File(ruta2));
 
                         transformer.transform(source, result);
 
