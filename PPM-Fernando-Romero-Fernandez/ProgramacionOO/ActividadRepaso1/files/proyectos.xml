@@ -1,0 +1,7 @@
+<proyectos>
+    <proyecto nombre="Alphasec" departamento="Seguridad" fprod="2.5">Descripción</proyecto>
+    <proyecto nombre="Android" departamento="Contabilidad" fprod="3.5">Descripción</proyecto>
+    <proyecto nombre="Motorola" departamento="Fichado" fprod="2">Descripción</proyecto>
+    <proyecto nombre="Apple" departamento="CiberSeguridad" fprod="4">Descripción</proyecto>
+    <proyecto nombre="Google" departamento="Dirección" fprod="5">Descripción</proyecto>
+</proyectos>

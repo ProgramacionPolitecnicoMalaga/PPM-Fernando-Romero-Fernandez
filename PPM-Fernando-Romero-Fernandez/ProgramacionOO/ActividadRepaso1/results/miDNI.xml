@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleado DNI="DNI=&quot;76543217U&quot;" apellidos="apellidos=&quot;Romero Fernández&quot;" categoria="Técnico" horasEmpleadas="3.0" nombre="nombre=&quot;Fernando&quot;">
+    <proyecto departamento="departamento=&quot;Seguridad&quot;" descripcion="Descripción" factorProductividad="2.5" nombre="nombre=&quot;Alphasec&quot;">
+        <tarea nombre="Tarea4"/>
+    </proyecto>
+</empleado>

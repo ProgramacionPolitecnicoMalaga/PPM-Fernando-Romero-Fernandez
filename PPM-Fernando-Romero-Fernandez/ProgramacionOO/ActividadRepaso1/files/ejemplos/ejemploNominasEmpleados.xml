@@ -1,0 +1,4 @@
+<nominas>
+     <nomina nombreEmpleado="Fernando" categoria="Programador" sueldoBase="x" complementos="y"></nomina>
+     <nomina nombreEmpleado="Juan" categoria="Administrador" sueldoBase="x" complementos="y" sueldoTotal="x+y"></nomina>
+</nominas>

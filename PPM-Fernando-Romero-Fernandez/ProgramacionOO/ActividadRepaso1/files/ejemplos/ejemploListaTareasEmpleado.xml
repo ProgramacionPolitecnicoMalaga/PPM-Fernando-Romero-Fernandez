@@ -1,0 +1,14 @@
+<empleado DNI="54729620F" nombre="Fernando" apellidos="Romero Fernández" categoria="Programador">
+    <proyecto nombre="Alphasec" descripcion="Esta es mi descripción" departamento="Seguridad" factorProductividad="2.5">
+        <tarea nombre="XML" horas="5">
+        </tarea>
+        <tarea nombre="Java" horas="4">
+        </tarea>
+    </proyecto>
+    <proyecto nombre="Android" descripcion="Esta es mi descripción2" departamento="Contabilidad" factorProductividad="3.5">
+        <tarea nombre="JSON" horas="9">
+        </tarea>
+        <tarea nombre="PYTHON" horas="2">
+        </tarea>
+    </proyecto>
+</empleado>

@@ -1,0 +1,7 @@
+<empleados>
+    <empleado nombre="Fernando" apellidos="Romero Fernández" DNI="76543217U" productividad="2.5" categoria="1"/>
+    <empleado nombre="Alberto" apellidos="Gandoy" DNI="12345678Y" productividad="3.5" categoria="2"/>
+    <empleado nombre="Facundo" apellidos="De Nardo" DNI="87654321W" productividad="4.0" categoria="3"/>
+    <empleado nombre="David" apellidos="Fernández" DNI="54728163I" productividad="6.5" categoria="4"/>
+    <empleado nombre="Celia" apellidos="Romero" DNI="64792736J" productividad="9.5" categoria="5"/>
+</empleados>
