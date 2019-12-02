@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleado DNI="76543217U" apellidos="Romero Fernández" categoria="Técnico" nombre="Fernando">
+    <proyecto departamento="Seguridad" descripcion="Descripción" factorProductividad="2.5" id="Alphasec">
+        <tarea descripcion="Esta es mi tarea 1 en Alphasec" minutosEmpleados="60"/>
+    </proyecto>
+    <proyecto departamento="Contabilidad" descripcion="Descripción" factorProductividad="3.5" id="Android">
+        <tarea descripcion="Esta es mi tarea 1 en Android" minutosEmpleados="60"/>
+    </proyecto>
+    <proyecto departamento="Contabilidad" descripcion="Descripción" factorProductividad="3.5" id="Android">
+        <tarea descripcion="Esta es mi tarea 2 en Android" minutosEmpleados="60"/>
+    </proyecto>
+</empleado>

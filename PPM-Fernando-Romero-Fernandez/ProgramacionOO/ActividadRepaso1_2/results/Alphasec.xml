@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<proyecto departamento="Seguridad" nombre="Alphasec">
+    <tarea descripcion="Esta es mi tarea 1 en Alphasec" minuntosEmpleados="60" nombreEmpleado="Fernando"/>
+</proyecto>

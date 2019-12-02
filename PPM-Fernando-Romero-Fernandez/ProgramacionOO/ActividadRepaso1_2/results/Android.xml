@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<proyecto departamento="Contabilidad" nombre="Android">
+    <tarea descripcion="Esta es mi tarea 1 en Android" minuntosEmpleados="60" nombreEmpleado="Fernando"/>
+    <tarea descripcion="Esta es mi tarea 2 en Android" minuntosEmpleados="60" nombreEmpleado="Fernando"/>
+</proyecto>
