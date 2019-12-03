@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nominas>
+    <nomina DNI="76543217U" categoria="Técnico" complementos="0.0" nombreEmpleado="Fernando" sueldoBase="900.0" sueldoTotal="0.0"/>
+    <nomina DNI="12345678Y" categoria="Administrador" complementos="0.0" nombreEmpleado="Alberto" sueldoBase="1400.0" sueldoTotal="0.0"/>
+    <nomina DNI="87654321W" categoria="Programador" complementos="0.0" nombreEmpleado="Facundo" sueldoBase="1800.0" sueldoTotal="0.0"/>
+    <nomina DNI="54728163I" categoria="Jefe de Proyecto" complementos="0.0" nombreEmpleado="David" sueldoBase="2500.0" sueldoTotal="0.0"/>
+    <nomina DNI="64792736J" categoria="Jefe de Operaciones" complementos="0.0" nombreEmpleado="Celia" sueldoBase="3500.0" sueldoTotal="0.0"/>
+</nominas>

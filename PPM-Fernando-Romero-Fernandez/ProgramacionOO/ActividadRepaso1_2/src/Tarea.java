@@ -15,10 +15,11 @@ public class Tarea {
     }
 
     public void añadirTareaALista(Tarea tarea){
-        LinkedList miLista = tarea.getEmpleado().getListaTareas();
-        miLista.add(tarea);
-        LinkedList miLista2 = tarea.getProyecto().getListaTareas();
-        miLista2.add(tarea);
+        LinkedList<Tarea> miListaTareasPorEmpleado = tarea.getEmpleado().getListaTareas();
+        System.out.println(tarea.getEmpleado().getListaTareas());
+        miListaTareasPorEmpleado.add(tarea);
+        LinkedList<Tarea> miListaTareasPorProyecto = tarea.getProyecto().getListaTareas();
+        miListaTareasPorProyecto.add(tarea);
 
     }
 

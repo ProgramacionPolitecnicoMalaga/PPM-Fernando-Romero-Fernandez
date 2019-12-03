@@ -62,4 +62,5 @@ public class Empleado {
     public void setListaTareas(LinkedList<Tarea> listaTareas) {
         this.listaTareas = listaTareas;
     }
+
 }

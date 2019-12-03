@@ -5,19 +5,19 @@ public class PlayApp {
 
         //DEFINIR MIS EMPLEADOS
 
-        Empleado empFernando = listas.listaEmpleados.get(0);
-        Empleado empAlberto = listas.listaEmpleados.get(1);
-        Empleado empFacundo = listas.listaEmpleados.get(2);
-        Empleado empDavid = listas.listaEmpleados.get(3);
-        Empleado empCelia = listas.listaEmpleados.get(4);
+        Empleado empFernando = listas.getListaEmpleados().get(0);
+        Empleado empAlberto = listas.getListaEmpleados().get(1);
+        Empleado empFacundo = listas.getListaEmpleados().get(2);
+        Empleado empDavid = listas.getListaEmpleados().get(3);
+        Empleado empCelia = listas.getListaEmpleados().get(4);
 
         //DEFINIR MIS PROYECTOS
 
-        Proyecto proAlpahsec = listas.listaProyectos.get(0);
-        Proyecto proAndroid = listas.listaProyectos.get(1);
-        Proyecto proMotorola = listas.listaProyectos.get(2);
-        Proyecto proApple = listas.listaProyectos.get(3);
-        Proyecto proGoogle = listas.listaProyectos.get(4);
+        Proyecto proAlpahsec = listas.getListaProyectos().get(0);
+        Proyecto proAndroid = listas.getListaProyectos().get(1);
+        Proyecto proMotorola = listas.getListaProyectos().get(2);
+        Proyecto proApple = listas.getListaProyectos().get(3);
+        Proyecto proGoogle = listas.getListaProyectos().get(4);
 
         //CREAR ALGUNAS TAREAS
 
@@ -36,7 +36,7 @@ public class PlayApp {
         XMLTareasPorEmpleado xmlTareasPorEmpleado = new XMLTareasPorEmpleado(empFernando);
         XMLTareasPorProyecto xmlTareasPorProyecto = new XMLTareasPorProyecto(proAlpahsec);
         XMLTareasPorProyecto xmlTareasPorProyecto2 = new XMLTareasPorProyecto(proAndroid);
-
+        XMLNominas xmlNominas = new XMLNominas();
 
 
     }

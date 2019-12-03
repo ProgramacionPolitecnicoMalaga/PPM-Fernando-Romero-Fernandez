@@ -5,8 +5,8 @@ import java.util.LinkedList;
 
 public class Listas {
 
-    LinkedList<Empleado> listaEmpleados = new LinkedList<>();
-    LinkedList<Proyecto> listaProyectos = new LinkedList<>();
+    private LinkedList<Empleado> listaEmpleados = new LinkedList<>();
+    private LinkedList<Proyecto> listaProyectos = new LinkedList<>();
 
     public Listas(){
 

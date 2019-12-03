@@ -16,7 +16,6 @@ import java.util.LinkedList;
 
 public class XMLTareasPorProyecto {
 
-
     private LinkedList<Tarea> tareasDeMiProyecto = new LinkedList<>();
     private String nombreProyecto = "";
 
@@ -82,7 +81,7 @@ public class XMLTareasPorProyecto {
             ex.printStackTrace();
         }
 
-        System.out.println("File saved!");
+        System.out.println("Tareas por Proyecto Creadas!");
     }
 
 }
