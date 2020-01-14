@@ -44,12 +44,7 @@ public class Empleados {
     public String getPromedioVentasDeLosEmpleados(){
         String mensaje = "";
         for(int i = 0; i < empleados.size(); i++){
-            int total = 0;
-            for(int j = 0; j < empleados.get(i).getVentas().length; j++){
-                total += empleados.get(i).getVentas()[j];
-            }
-            double promedio;
-            promedio = total/empleados.get(i).getVentas().length;
+            double promedio = empleados.get(i).getPromedioVentas();
             mensaje = mensaje + empleados.get(i).getNombre() + ":" + promedio + "\n";
         }
         return mensaje;

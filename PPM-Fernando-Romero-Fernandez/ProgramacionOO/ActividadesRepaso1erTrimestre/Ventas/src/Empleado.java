@@ -19,6 +19,15 @@ public class Empleado {
         return ventas;
     }
 
+    public double getPromedioVentas(){
+        double total = 0.0;
+        for(int i = 0; i< ventas.length; i++){
+            total += ventas[i];
+        }
+        double promedio = total/getVentas().length;
+        return promedio;
+    }
+
     public String getNombre() {
         return nombre;
     }

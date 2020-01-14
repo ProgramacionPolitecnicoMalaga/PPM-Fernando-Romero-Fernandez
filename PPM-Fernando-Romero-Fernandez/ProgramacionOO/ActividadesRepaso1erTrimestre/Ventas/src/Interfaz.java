@@ -11,6 +11,7 @@ public class Interfaz {
 
     public void mostrarPreguntas(){
         System.out.println(
+        "----------------------------------------------------------------------------\n" +
         "1. Empleados que vendieron un número de items\n" +
         "2. Obtener el promedio de ventas de cada uno\n" +
         "3. Averiguar quién han conseguido el mayor número de ventas en un día\n" +
