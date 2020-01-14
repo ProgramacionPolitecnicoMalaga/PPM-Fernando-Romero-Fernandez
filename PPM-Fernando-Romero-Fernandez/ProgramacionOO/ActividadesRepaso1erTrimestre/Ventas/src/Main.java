@@ -2,6 +2,9 @@ public class Main {
 
     public static void main(String[] args) {
         Interfaz interfaz = new Interfaz();
-        interfaz.mostrarPreguntas();
+        int numero = 2;
+        while(numero != 5){
+            interfaz.mostrarPreguntas();
+        }
     }
 }

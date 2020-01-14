@@ -31,11 +31,4 @@ public class Empleado {
         this.ventas = ventas;
     }
 
-    @Override
-    public String toString() {
-        return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", ventas=" + Arrays.toString(ventas) +
-                '}';
-    }
 }

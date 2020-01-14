@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Interfaz {
 
     private int opcionElegida;
+    private Empleados empleados;
 
     public Interfaz(){
-
+        empleados = new Empleados();
     }
 
     public void mostrarPreguntas(){
@@ -16,12 +17,12 @@ public class Interfaz {
         "4. Insertar un nuevo empleado y sus ventas");
 
         System.out.println("Selecciona una opción");
-        Scanner lectorTeclado = new Scanner(System.in);
-        opcionElegida = lectorTeclado.nextInt();
-        seleccionarOpcion(opcionElegida);
+        seleccionarOpcion();
     }
 
-    public void seleccionarOpcion(int opcionElegida){
-        Opcion opcion = new Opcion(opcionElegida);
+    public void seleccionarOpcion(){
+        Scanner lectorTeclado = new Scanner(System.in);
+        opcionElegida = lectorTeclado.nextInt();
+        Opcion opcion = new Opcion(opcionElegida,empleados);
     }
 }

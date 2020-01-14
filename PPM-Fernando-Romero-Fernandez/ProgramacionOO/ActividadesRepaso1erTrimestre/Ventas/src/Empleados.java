@@ -27,7 +27,6 @@ public class Empleados {
 
     public String getEmpleadoPorNumeroVentasEnUnDia(int numeroVentas){
         String mensaje = "";
-        System.out.println(empleados);
         for(int i = 0; i < empleados.size(); i++){
             boolean entrado = false;
             for(int j = 0; j < empleados.get(i).getVentas().length; j++){
@@ -69,12 +68,5 @@ public class Empleados {
         }
         String mensaje = mejorVendedor + " es el/la vendedor/a de la semana con " + mejorVenta + " items en un día";
         return mensaje;
-    }
-
-    @Override
-    public String toString() {
-        return "Empleados{" +
-                "empleados=" + empleados +
-                '}';
     }
 }

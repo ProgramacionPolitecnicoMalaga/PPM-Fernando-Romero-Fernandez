@@ -8,9 +8,8 @@ public class Opcion {
     public static final int OPCION_3 = 3;
     public static final int OPCION_4 = 4;
 
-    public Opcion(int opcionElegida){
+    public Opcion(int opcionElegida, Empleados empleados){
         Scanner lectorTeclado = new Scanner(System.in);
-        Empleados empleados = new Empleados();
         switch (opcionElegida){
             case OPCION_1:
                 int numeroItems;
