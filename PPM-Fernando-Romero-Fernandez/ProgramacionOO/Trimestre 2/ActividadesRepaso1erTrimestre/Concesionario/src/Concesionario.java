@@ -2,12 +2,14 @@ import java.util.ArrayList;
 
 public class Concesionario {
 
+    int caja;
     ArrayList<Vehiculo> almacenVehiculos;
     ArrayList<Cliente> clientesAsociados;
 
     public Concesionario(){
         almacenVehiculos = new ArrayList<Vehiculo>();
         clientesAsociados = new ArrayList<Cliente>();
+        caja = 0;
     }
 
     public void añadirVehiculo(Vehiculo vehiculo){

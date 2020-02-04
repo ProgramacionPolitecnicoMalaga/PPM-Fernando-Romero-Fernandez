@@ -24,10 +24,6 @@ public class Cliente {
         return nif;
     }
 
-    public ArrayList<Vehiculo> getVehiculosDelCliente() {
-        return vehiculosDelCliente;
-    }
-
     public void añadirVehiculoAlCliente(Vehiculo vehiculo){
         vehiculosDelCliente.add(vehiculo);
     }

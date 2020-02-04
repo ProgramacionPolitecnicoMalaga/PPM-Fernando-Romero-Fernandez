@@ -25,8 +25,8 @@ public class Vista {
                 "5. Realizar una venta a un cliente.\n" +
                 "6. Realizar una compra a un cliente.\n" +
                 "7. Obtener el saldo total de un cliente que ha realizado ventas/compras en el concesionario.\n" +
-                "8. Terminar programa." +
-                "Selecciona una opción");
+                "8. Terminar programa.\n" +
+                "Seleccione una opción.");
         return lectorTeclado.nextInt();
     }
 
@@ -40,7 +40,8 @@ public class Vista {
                     " Color: " + vehiculo.getColor() +
                     " Año Fab: " + vehiculo.getAñoFabricacion() +
                     " Combustión: " + vehiculo.getCombustion() +
-                    " ¿Es nuevo?: " + vehiculo.isNuevo());
+                    " ¿Es nuevo?: " + vehiculo.isNuevo() +
+                    " Precio: " + vehiculo.getPrecio());
         }
     }
 
@@ -54,8 +55,13 @@ public class Vista {
                     " Color: " + vehiculo.getColor() +
                     " Año Fab: " + vehiculo.getAñoFabricacion() +
                     " Combustión: " + vehiculo.getCombustion() +
-                    " ¿Es nuevo?: " + vehiculo.isNuevo());
+                    " ¿Es nuevo?: " + vehiculo.isNuevo() +
+                    " Precio: " + vehiculo.getPrecio());
         }
+    }
+
+    public void mostrarBalance(Concesionario concesionario){
+        System.out.println(concesionario.caja);
     }
 
     public String pedirModeloVehiculo() {
@@ -73,9 +79,9 @@ public class Vista {
         return lectorTeclado.next();
     }
 
-    public String pedirAñoFabricacionVehiculo() {
+    public int pedirAñoFabricacionVehiculo() {
         System.out.println("Introduce el año de fabricación del vehículo");
-        return lectorTeclado.next();
+        return lectorTeclado.nextInt();
     }
 
     public String pedirCombustionVehiculo() {

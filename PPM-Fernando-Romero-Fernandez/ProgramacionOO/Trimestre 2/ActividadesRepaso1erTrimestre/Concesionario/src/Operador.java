@@ -2,11 +2,13 @@ public class Operador {
 
     private static Vista vista;
     private Concesionario concesionario;
+    private Tasador tasador;
     public int opcion = -1;
 
     public Operador(){
         concesionario = new Concesionario();
         vista = new Vista();
+        tasador = new Tasador();
     }
 
     public void iniciar(){
@@ -17,10 +19,12 @@ public class Operador {
                     String marca = vista.pedirMarcaVehiculo();
                     String modelo = vista.pedirModeloVehiculo();
                     String color = vista.pedirColorVehiculo();
-                    String añoFabricacion = vista.pedirAñoFabricacionVehiculo();
+                    int añoFabricacion = vista.pedirAñoFabricacionVehiculo();
                     String combusiton = vista.pedirCombustionVehiculo();
                     boolean esNuevo = vista.pedirEsNuevoElCoche();
-                    concesionario.añadirVehiculo(new Vehiculo(modelo,marca,color,añoFabricacion,combusiton,esNuevo));
+                    Vehiculo vehiculo = new Vehiculo(modelo,marca,color,añoFabricacion,combusiton,esNuevo);
+                    tasador.tasarVehiculo(vehiculo);
+                    concesionario.añadirVehiculo(vehiculo);
                     iniciar();
                     break;
                 case Vista.AÑADIR_CLIENTE:
@@ -47,6 +51,8 @@ public class Operador {
                     int posVehiculoSolicitado = vista.pedirPos();
                     Vehiculo vehiculoAVender = concesionario.pedirVehiculoPorPos(posVehiculoSolicitado);
                     comprador.añadirVehiculoAlCliente(vehiculoAVender);
+                    System.out.println(vehiculoAVender.getPrecio());
+                    concesionario.caja += vehiculoAVender.getPrecio();
                     iniciar();
                     break;
                 case Vista.COMPRAR_COCHE_A_CLIENTE:
@@ -56,17 +62,12 @@ public class Operador {
                     int posVehiculoDelCliente = vista.pedirPos();
                     Vehiculo vehiculoAComprar = vendedor.pedirVehiculoPorPos(posVehiculoDelCliente);
                     concesionario.añadirVehiculo(vehiculoAComprar);
+                    concesionario.caja -= vehiculoAComprar.getPrecio();
                     iniciar();
-
                     break;
                 case Vista.OBTENER_BALANCE:
-
-
-                    break;
-
-                case Vista.TERMINAR:
-                    System.out.println("Adiós");
-                    opcion = Vista.TERMINAR;
+                    vista.mostrarBalance(concesionario);
+                    iniciar();
                     break;
             }
         }

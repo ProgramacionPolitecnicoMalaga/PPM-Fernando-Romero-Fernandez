@@ -1,9 +1,10 @@
 public class Vehiculo {
 
-    private String modelo, marca, color, añoFabricacion, combustion;
+    private String modelo, marca, color, combustion;
+    private int añoFabricacion, precio;
     private boolean nuevo;
 
-    public Vehiculo(String modelo, String marca, String color, String añoFabricacion, String combustion, boolean nuevo){
+    public Vehiculo(String modelo, String marca, String color, int añoFabricacion, String combustion, boolean nuevo){
         this.modelo = modelo;
         this.marca = marca;
         this.color = color;
@@ -24,7 +25,7 @@ public class Vehiculo {
         return color;
     }
 
-    public String getAñoFabricacion() {
+    public int getAñoFabricacion() {
         return añoFabricacion;
     }
 
@@ -36,6 +37,13 @@ public class Vehiculo {
         return nuevo;
     }
 
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
     @Override
     public String toString() {
         return "Vehiculo{" +
