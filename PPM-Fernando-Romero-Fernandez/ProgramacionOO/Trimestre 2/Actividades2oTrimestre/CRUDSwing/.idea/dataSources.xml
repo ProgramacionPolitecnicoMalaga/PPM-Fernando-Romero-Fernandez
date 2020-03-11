@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="vps791421.ovh.net" uuid="2d870b1c-d374-4783-8fa7-75acf1687cd8">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://vps791421.ovh.net:3306/Empleados</jdbc-url>
+    </data-source>
+  </component>
+</project>
