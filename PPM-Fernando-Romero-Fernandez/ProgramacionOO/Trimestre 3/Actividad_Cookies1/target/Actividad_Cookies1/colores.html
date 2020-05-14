@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color</title>
+</head>
+<body>
+<p>Elige un color de fondo</p>
+<form>
+    <input type="color" id="color" name="color"/>
+    <button id="btnEnviarColor">Enviar</button>
+</form>
+</body>
+<script type="text/javascript">
+    var inputColor = document.getElementById("color");
+    var btnEnviarColor = document.getElementById("btnEnviarColor");
+
+    btnEnviarColor.addEventListener("click", function(e){
+        e.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST","colorCookie",true);
+        xhr.onreadystatechange = function(){
+            if ((xhr.readyState == 4) && (xhr.status == 200)){
+                console.log(xhr.responseText);
+                let jsonObtenido =  JSON.parse(xhr.responseText);
+                if (jsonObtenido.status == "ok") {
+                    let body = document.getElementsByTagName("BODY")[0];
+                    body.style.backgroundColor = jsonObtenido.color;
+                }
+            }
+        }
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.send(JSON.stringify({color:inputColor.value}));
+    })
+
+    window.addEventListener("load", function(e){
+        e.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "colorFondoCookie", true);
+        xhr.onreadystatechange = function () {
+            if ((xhr.readyState == 4) && (xhr.status == 200)) {
+                let jsonObtenido = JSON.parse(xhr.responseText);
+                if (jsonObtenido.status == "ok") {
+                    let body = document.getElementsByTagName("BODY")[0];
+                    body.style.backgroundColor = jsonObtenido.color;
+                }
+            }
+        }
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.send();
+    })
+</script>
+</html>
