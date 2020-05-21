@@ -9,14 +9,11 @@
 <h1>Palabras encadenadas</h1>
 
 <%
-    int resultado = (Integer) request.getAttribute("resultado");
 
     String palabrasConcatenadas = (String) request.getAttribute("resultado");
     ArrayList<String> listaPalabras = (ArrayList<String>) request.getAttribute("listaDePalabras");
 
-
-    out.print("<p> El resultado de la suma es: " + resultado + "</p>");
-    out.print("<p> La concatenación de " + listaPalabras.get(1) + ", " + listaPalabras.get(2) + "y " + listaPalabras.get(3) + " es " + palabrasConcatenadas + "</p>");
+    out.print("<p> La concatenación de " + listaPalabras.get(0) + ", " + listaPalabras.get(1) + " y " + listaPalabras.get(2) + " es " + palabrasConcatenadas + "</p>");
 
 %>
 
