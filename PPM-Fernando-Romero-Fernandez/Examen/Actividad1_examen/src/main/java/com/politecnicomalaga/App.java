@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class App {
 
     private static Scanner lectorTeclado = new Scanner(System.in).useDelimiter("\n");
-    private static Pizza pizza;
 
     public static void main(String[] args){
 
@@ -21,7 +20,7 @@ public class App {
         int tipoPizza = lectorTeclado.nextInt();
 
         GeneradorDePizzas generadorDePizzas = new GeneradorDePizzas();
-        Interface_Pizza pizza = generadorDePizzas.getPizzaPorString()
+        Interface_Pizza pizzaObtenida = generadorDePizzas.getPizzaPorNumero(tipoPizza);
 
         /*if (tipoPizza == Pizza.ESTACIONES)
             pizza = new Pizza4Estaciones();
@@ -32,12 +31,13 @@ public class App {
         else if (tipoPizza == Pizza.VEGANA)
             pizza = new PizzaVegana();
         else
-            pizza = new PizzaMargarita();*/
+            pizza = new PizzaMargarita();
+*/
 
         System.out.println("Pasos a seguir:");
-        System.out.println(pizza.preparar());
-        System.out.println(pizza.hornear());
-        System.out.println(pizza.cortar());
-        System.out.println(pizza.empaquetar());
+        System.out.println(pizzaObtenida.preparar());
+        System.out.println(pizzaObtenida.hornear());
+        System.out.println(pizzaObtenida.cortar());
+        System.out.println(pizzaObtenida.empaquetar());
     }
 }
